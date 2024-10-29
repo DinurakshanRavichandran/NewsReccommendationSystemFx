@@ -1,0 +1,7 @@
+/* CSS file: loginPage.css */
+
+.anchorpane-background {
+    -fx-background-image: url("com/example/oodprojectfx/assets/images/BackgroundBlackWawes.jpg"); /* Replace with the correct path to your background image */
+    -fx-background-size: cover;      /* Scales the image to cover the entire AnchorPane */
+    -fx-background-position: center; /* Centers the image in the AnchorPane */
+}
