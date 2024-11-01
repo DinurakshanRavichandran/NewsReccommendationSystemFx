@@ -1,7 +1,24 @@
 /* CSS file: loginPage.css */
 
+/* AnchorPane background */
 .anchorpane-background {
-    -fx-background-image: url("com/example/oodprojectfx/assets/images/BackgroundBlackWawes.jpg"); /* Replace with the correct path to your background image */
-    -fx-background-size: cover;      /* Scales the image to cover the entire AnchorPane */
-    -fx-background-position: center; /* Centers the image in the AnchorPane */
+    -fx-background-image: url("BackgroundBlackWawes.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+
+/* HBox with background image one */
+.vbox-background-center {
+    -fx-background-image: url("BackgroundBlackWawes.jpg");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+/* HBox with background image two */
+.vbox-background-right {
+    -fx-background-image: url("backgroundCenterLogin.jpg");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
 }
