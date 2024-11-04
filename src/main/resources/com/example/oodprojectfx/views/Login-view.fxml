@@ -30,7 +30,7 @@
       </VBox>
       <VBox layoutX="480.0" prefHeight="460.0" prefWidth="302.0" styleClass="vbox-background-right" stylesheets="@../css/loginPage.css">
          <children>
-            <HBox prefHeight="120.0" prefWidth="302.0" stylesheets="@../css/loginPage.css" />
+            <HBox prefHeight="150.0" prefWidth="302.0" stylesheets="@../css/loginPage.css" />
             <HBox alignment="CENTER" prefHeight="52.0" prefWidth="302.0">
                <children>
                   <TextField fx:id="UsernameField" prefHeight="38.0" prefWidth="267.0" promptText="Username" style="-fx-background-radius: 50; -fx-border-radius: 50;" />
