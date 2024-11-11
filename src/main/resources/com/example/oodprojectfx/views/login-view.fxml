@@ -33,7 +33,7 @@
             <HBox prefHeight="150.0" prefWidth="302.0" stylesheets="@../css/loginPage.css" />
             <HBox alignment="CENTER" prefHeight="52.0" prefWidth="302.0">
                <children>
-                  <TextField fx:id="UsernameField" prefHeight="38.0" prefWidth="267.0" promptText="Username" style="-fx-background-radius: 50; -fx-border-radius: 50;" />
+                  <TextField fx:id="emailField" prefHeight="38.0" prefWidth="267.0" promptText="Email" style="-fx-background-radius: 50; -fx-border-radius: 50;" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="56.0" prefWidth="302.0">
