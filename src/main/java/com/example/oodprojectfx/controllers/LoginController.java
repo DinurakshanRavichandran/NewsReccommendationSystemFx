@@ -47,7 +47,8 @@ public class LoginController {
 
         try{
             // queery for getting the password for the given email from the database
-            String query = "SELECT password from WHERE email = " + email + ";";
+            String query = "SELECT password FROM user WHERE email = '" + email + "';";
+
             ResultSet resultSet = DatabaseHandler.search(query);
 
             if (resultSet.next())
@@ -79,7 +80,7 @@ public class LoginController {
 
     @FXML
     void onSignUpButtonClick(ActionEvent event) {
-        changeToNextScene(event, "");
+        changeToNextScene(event, "/com/example/oodprojectfx/views/register-view.fxml");
     }
 
     private void showAlert(String title, String message)
