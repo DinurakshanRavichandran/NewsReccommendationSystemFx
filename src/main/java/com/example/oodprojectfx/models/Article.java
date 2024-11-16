@@ -8,8 +8,9 @@ public class Article {
     private String category;
     private String contentText;
     private String contentLink;
+    private String imagePath;
 
-    public Article(String articleId, String title, String author, String content, String category, String contentText, String contentLink) {
+    public Article(String articleId, String title, String author, String content, String category, String contentText, String contentLink, String imagePath) {
         this.articleId = articleId;
         this.title = title;
         this.author = author;
@@ -17,6 +18,7 @@ public class Article {
         this.category = category;
         this.contentText = contentText;
         this.contentLink = contentLink;
+        this.imagePath = imagePath;
     }
 
     public String getContentLink() {
@@ -73,6 +75,14 @@ public class Article {
 
     public void setArticleId(String articleId) {
         this.articleId = articleId;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
+
+    public String getImagePath() {
+        return imagePath;
     }
 
 

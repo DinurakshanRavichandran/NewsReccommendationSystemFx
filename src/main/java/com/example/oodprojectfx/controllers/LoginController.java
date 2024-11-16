@@ -46,18 +46,33 @@ public class LoginController {
         }
 
         try{
-            // queery for getting the password for the given email from the database
-            String query = "SELECT password FROM user WHERE email = '" + email + "';";
+            // query for getting the password and account type for the given email from the database
+            String query = "SELECT password, accountType FROM user WHERE email = '" + email + "';";
 
             ResultSet resultSet = DatabaseHandler.search(query);
 
             if (resultSet.next())
             {
                 String storedPassword = resultSet.getString("password");
+                String accountType = resultSet.getString("accountType"); // Retrieve accountType
                 if(storedPassword.equals(password))
                 {
-                    //credentials are correct, proceed to next scene
-                    changeToNextScene(event, "");
+                    //credentials are correct, proceed to next scene accordingly based on accountType
+                    String fxmlPath;
+                    if( accountType.equalsIgnoreCase("Admin"))
+                    {
+                        fxmlPath = "/com/example/oodprojectfx/views/admin-view.fxml";
+                    }
+                    else{
+                        fxmlPath = "/com/example/oodprojectfx/views/user-view.fxml";
+                    }
+
+                    //Load the specified FXML file
+                    Parent root = FXMLLoader.load(getClass().getResource(fxmlPath));
+                    Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+                    Scene scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.show();
                 }else{
                     // password incorrect
                     showAlert("Incorrect password", "The password you entered is incorrect");
@@ -71,6 +86,10 @@ public class LoginController {
         {
             e.printStackTrace();
             showAlert("Database error", "There was an error in accessing the database");
+        }catch (IOException e)
+        {
+            e.printStackTrace();
+            showAlert("Load error", "An error has occured while loading the view ");
         }
 
 
