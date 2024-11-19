@@ -14,7 +14,7 @@ public class articlePageController {
     public Button addArticleButton;
 
     public void onAddArticleButtonClick(ActionEvent event) {
-        changeScene(event, "come/example/oodprojectfx/views/addArticle-view");
+        changeScene(event, "/com/example/oodprojectfx/views/addArticles-view.fxml");
     }
 
     private void changeScene(ActionEvent event, String fxmlFile) {

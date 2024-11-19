@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="2100.0" prefWidth="1200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="2100.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oodprojectfx.controllers.addArticleController">
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="2100.0" prefWidth="1200.0">
          <children>
@@ -84,7 +84,7 @@
                   <HBox prefHeight="47.0" prefWidth="791.0" />
                   <HBox alignment="CENTER" prefHeight="778.0" prefWidth="791.0">
                      <children>
-                        <TextArea fx:id="abstractField1" prefHeight="694.0" prefWidth="702.0" wrapText="true" />
+                        <TextArea fx:id="fileLinkField" prefHeight="694.0" prefWidth="702.0" wrapText="true" />
                      </children>
                   </HBox>
                   <HBox prefHeight="62.0" prefWidth="791.0" />
@@ -109,7 +109,7 @@
                   </HBox>
                   <AnchorPane prefHeight="466.0" prefWidth="791.0">
                      <children>
-                        <ImageView fitHeight="329.0" fitWidth="438.0" layoutX="51.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="imageField" fitHeight="329.0" fitWidth="438.0" layoutX="51.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true" />
                         <Button fx:id="addButton" layoutX="636.0" layoutY="399.0" mnemonicParsing="false" onAction="#onAddButtonClick" prefHeight="48.0" prefWidth="134.0" text="Save" />
                      </children>
                   </AnchorPane>

@@ -6,27 +6,48 @@ public class Article {
     private String author;
     private String content;
     private String category;
+    private String articleMaterial;
     private String contentText;
-    private String contentLink;
+    private String urlToArticle;
     private String imagePath;
 
-    public Article(String articleId, String title, String author, String content, String category, String contentText, String contentLink, String imagePath) {
+
+    public Article(String articleId, String title, String author, String content, String category, String contentText, String urlToArticle, String imagePath) {
         this.articleId = articleId;
         this.title = title;
         this.author = author;
         this.content = content;
         this.category = category;
         this.contentText = contentText;
-        this.contentLink = contentLink;
+        this.urlToArticle = urlToArticle;
         this.imagePath = imagePath;
     }
 
+    // Additional Constructor (API-focused)
+    public Article(String title, String author, String content, String urlToArticle, String imagePath) {
+        this.title = title;
+        this.author = author;
+        this.content = content;
+        this.urlToArticle = urlToArticle;
+        this.imagePath = imagePath;
+    }
+
+    public Article(String title, String author, String content, String category, String contentLink, String imagePath) {
+        this.title = title;
+        this.author = author;
+        this.content = content;
+        this.category = category; // "General" or other category passed to the constructor
+        this.urlToArticle = contentLink;
+        this.imagePath = imagePath;
+
+    }
+
     public String getContentLink() {
-        return contentLink;
+        return urlToArticle;
     }
 
     public void setContentLink(String contentLink) {
-        this.contentLink = contentLink;
+        this.urlToArticle = contentLink;
     }
 
     public String getCategory() {

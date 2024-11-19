@@ -32,8 +32,8 @@ public class addArticleController implements Initializable {
     public TextField authorField;
     @FXML
     public TextArea abstractField;
-    @FXML
-    public TextField fileLinkField;
+//    @FXML
+//    public TextField fileLinkField;
     @FXML
     public ChoiceBox<String> categoryField;
     @FXML
@@ -44,9 +44,12 @@ public class addArticleController implements Initializable {
     public TextField titleField;
     @FXML
     public Button backButton;
+    @FXML
+    public TextArea fileLinkField;
 
     private String imagePath;
     private String[] category = {"Business", "Sports", "Technology", "Celebrity", "Politics"};
+    private int article_id = 10000000;
 
 
 
@@ -102,18 +105,20 @@ public class addArticleController implements Initializable {
         String abstractText = abstractField.getText().trim();
         String fileLink = fileLinkField.getText().trim();
 
+        // Generate unique article ID (e.g., 10000001, 10000002, etc.)
+        String articleId = String.format("%08d", ++article_id);
         //validate input
-        if(title.isEmpty() || content.isEmpty() || author.isEmpty() || category.isEmpty() || fileLink.isEmpty())
-        {
-            showAlert("Error","Title, content, author, category and fileLink fields are required ");
+        if (title.isEmpty() || content.isEmpty() || author.isEmpty() || category.isEmpty() || fileLink.isEmpty()) {
+            showAlert("Error", "All fields (title, content, author, category, and fileLink) are required.");
+            return;
         }
+
         // Build SQL query to insert the article
         String query = String.format(
-                "INSERT INTO articles (title, content, author, category, abstract, fileLink, imagePath) " +
-                        "VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s');",
-                title, content, author, category, abstractText, fileLink, imagePath
+                "INSERT INTO article (article_id, title, content, author, category, content_text, article_material, imagePath) " +
+                        "VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');",
+                articleId, title, content, author, category, abstractText, fileLink, imagePath
         );
-
         //Execute query
         try {
             DatabaseHandler.iud(query);
@@ -122,6 +127,15 @@ public class addArticleController implements Initializable {
         {
             e.printStackTrace();
             showAlert("Error", "Failed to add article, please try again");
+        }
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/com/example/oodprojectfx/views/articlePage-view.fxml"));
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
 
