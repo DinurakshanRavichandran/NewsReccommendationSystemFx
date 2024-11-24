@@ -1,6 +1,8 @@
 package com.example.oodprojectfx.controllers;
 
 import com.example.oodprojectfx.database.DatabaseHandler;
+import com.example.oodprojectfx.models.User;
+import com.example.oodprojectfx.models.UserSession;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -47,7 +49,7 @@ public class LoginController {
 
         try{
             // query for getting the password and account type for the given email from the database
-            String query = "SELECT password, accountType FROM user WHERE email = '" + email + "';";
+            String query = "SELECT password, accountType, username FROM user WHERE email = '" + email + "';";
 
             ResultSet resultSet = DatabaseHandler.search(query);
 
@@ -55,8 +57,13 @@ public class LoginController {
             {
                 String storedPassword = resultSet.getString("password");
                 String accountType = resultSet.getString("accountType"); // Retrieve accountType
+                String username = resultSet.getString("username");
                 if(storedPassword.equals(password))
+
                 {
+                    User currentUser = new User(email, username);
+                    UserSession.getInstance().setCurrentUser(currentUser);
+                    System.out.println("Session created");
                     //credentials are correct, proceed to next scene accordingly based on accountType
                     String fxmlPath;
                     if( accountType.equalsIgnoreCase("Admin"))

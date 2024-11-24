@@ -12,6 +12,11 @@ public class User {
         this.username = username;
         this.accountType = accountType;
     }
+    public User(String username, String email)
+    {
+        this.username = username;
+        this.email = email;
+    }
 
     public String getAccountType() {
         return accountType;

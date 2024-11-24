@@ -30,7 +30,31 @@
       <artifactId>jackson-databind</artifactId>
       <version>2.15.2</version>
     </dependency>
+    <!-- Stanford CoreNLP dependency -->
+    <dependency>
+      <groupId>edu.stanford.nlp</groupId>
+      <artifactId>stanford-corenlp</artifactId>
+      <version>4.5.7</version> <!-- Replace with the latest version -->
+    </dependency>
 
+    <!-- Stanford NLP models (optional, but useful) -->
+    <dependency>
+      <groupId>edu.stanford.nlp</groupId>
+      <artifactId>stanford-corenlp</artifactId>
+      <version>4.5.7</version> <!-- Replace with the latest version -->
+      <classifier>models</classifier>
+    </dependency>
+    <!-- Stanford NLP models to fix the NLP error -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.32</version>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.2.6</version>
+    </dependency>
 
     <dependency>
       <groupId>org.openjfx</groupId>

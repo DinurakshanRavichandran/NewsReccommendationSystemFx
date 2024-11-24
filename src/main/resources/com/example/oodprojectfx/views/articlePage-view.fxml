@@ -47,12 +47,11 @@
       </VBox>
       <AnchorPane layoutX="213.0" layoutY="72.0" prefHeight="528.0" prefWidth="694.0">
          <children>
-            <TableView layoutX="38.0" layoutY="64.0" prefHeight="338.0" prefWidth="610.0">
+            <TableView fx:id="articleTable" layoutX="38.0" layoutY="64.0" prefHeight="338.0" prefWidth="610.0">
               <columns>
-                <TableColumn prefWidth="90.40008544921875" text="C1" />
-                <TableColumn prefWidth="383.9998779296875" text="C2" />
-                  <TableColumn prefWidth="70.400146484375" text="Column X" />
-                  <TableColumn prefWidth="64.0" text="Column X" />
+                <TableColumn fx:id="titleField" minWidth="30.0" prefWidth="287.1999206542969" />
+                <TableColumn fx:id="authorField" prefWidth="227.20001220703125" />
+                  <TableColumn fx:id="viewButtonField" prefWidth="93.5999755859375" />
               </columns>
             </TableView>
             <ScrollBar layoutX="648.0" layoutY="64.0" orientation="VERTICAL" prefHeight="338.0" prefWidth="14.0" />
