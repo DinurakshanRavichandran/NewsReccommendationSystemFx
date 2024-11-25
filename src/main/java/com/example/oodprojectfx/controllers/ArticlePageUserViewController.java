@@ -15,8 +15,6 @@ import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
@@ -24,29 +22,26 @@ import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class articlePageController {
+public class ArticlePageUserViewController {
 
     @FXML
-    public Button addArticleButton;
+    public TableView articleTable;
     @FXML
-    public TableView<Article> articleTable;
+    public TableColumn titleColumn;
     @FXML
-    public TableColumn<Article, String> titleField;
+    public TableColumn authorColumn;
     @FXML
-    public TableColumn<Article, String> authorField;
-    @FXML
-    public TableColumn viewButtonField;
+    public TableColumn viewButtonColumn;
 
     private ObservableList<Article> articleList = FXCollections.observableArrayList();
 
     @FXML
-    public void initialize(){
-        titleField.setCellValueFactory(new PropertyValueFactory<>("title"));
-        authorField.setCellValueFactory(new PropertyValueFactory<>("author"));
+    public void initialize() {
+        titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
+        authorColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
 
-
-        //viewButtonLogic
-        viewButtonField.setCellFactory(new Callback<TableColumn<Article, Void>, TableCell<Article, Void>>() {
+        // View button logic
+        viewButtonColumn.setCellFactory(new Callback<TableColumn<Article, Void>, TableCell<Article, Void>>() {
             @Override
             public TableCell<Article, Void> call(TableColumn<Article, Void> param) {
                 return new TableCell<Article, Void>() {
@@ -62,27 +57,22 @@ public class articlePageController {
                     @Override
                     protected void updateItem(Void item, boolean empty) {
                         super.updateItem(item, empty);
-                        if (empty) {
-                            setGraphic(null);
-                        } else {
-                            setGraphic(viewButton);
-                        }
+                        setGraphic(empty ? null : viewButton);
                     }
                 };
             }
         });
 
-        //Load the articles from the database
+        // Load articles from the database
         loadArticles();
 
-
-        // Bind the list to the table view
+        // Bind the list to the TableView
         articleTable.setItems(articleList);
     }
-    // This method is so that when the view button is clicked the relavant article's details are passed onto the next scene.
+
     private void showArticleDetails(ActionEvent event, Article article) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/oodprojectfx/views/articleAdminView-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/oodprojectfx/views/userArticleView-view.fxml"));
             Parent root = loader.load();
 
             // Pass the article details to the ArticleDetailsController
@@ -120,23 +110,15 @@ public class articlePageController {
         }
     }
 
-    public void onAddArticleButtonClick(ActionEvent event) {
-        changeScene(event, "/com/example/oodprojectfx/views/addArticles-view.fxml");
+    @FXML
+    public void onHomeButtonClick(ActionEvent event) {
+
     }
 
-    private void changeScene(ActionEvent event, String fxmlFile) {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
-            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    @FXML
+    public void onArticleButtonClick(ActionEvent event) {
     }
 
-
-
-
+    public void onRecommendationButtonClick(ActionEvent event) {
+    }
 }

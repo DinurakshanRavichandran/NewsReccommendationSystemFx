@@ -71,7 +71,7 @@ public class LoginController {
                         fxmlPath = "/com/example/oodprojectfx/views/admin-view.fxml";
                     }
                     else{
-                        fxmlPath = "/com/example/oodprojectfx/views/user-view.fxml";
+                        fxmlPath = "/com/example/oodprojectfx/views/homeUser-view.fxml";
                     }
 
                     //Load the specified FXML file
@@ -117,7 +117,7 @@ public class LoginController {
         alert.setContentText(message);
         alert.showAndWait();
     }
-    private void changeToNextScene(ActionEvent event, String fxmlFile) {
+     private void changeToNextScene(ActionEvent event, String fxmlFile) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
             Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
