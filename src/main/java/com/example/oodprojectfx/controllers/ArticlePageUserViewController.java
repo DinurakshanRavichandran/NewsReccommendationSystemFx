@@ -25,13 +25,13 @@ import java.sql.SQLException;
 public class ArticlePageUserViewController {
 
     @FXML
-    public TableView articleTable;
+    public TableView<Article> articleTable;
     @FXML
-    public TableColumn titleColumn;
+    public TableColumn<Article, String> titleColumn;
     @FXML
-    public TableColumn authorColumn;
+    public TableColumn<Article, String> authorColumn;
     @FXML
-    public TableColumn viewButtonColumn;
+    public TableColumn<Article, Void> viewButtonColumn;
 
     private ObservableList<Article> articleList = FXCollections.observableArrayList();
 
@@ -50,7 +50,7 @@ public class ArticlePageUserViewController {
                     {
                         viewButton.setOnAction(event -> {
                             Article article = getTableView().getItems().get(getIndex());
-                            showArticleDetails(event, article);
+                            showArticleDetails(event, article, articleList);
                         });
                     }
 
@@ -70,14 +70,16 @@ public class ArticlePageUserViewController {
         articleTable.setItems(articleList);
     }
 
-    private void showArticleDetails(ActionEvent event, Article article) {
+
+    private void showArticleDetails(ActionEvent event, Article article, ObservableList<Article> articleList) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/oodprojectfx/views/userArticleView-view.fxml"));
             Parent root = loader.load();
 
             // Pass the article details to the ArticleDetailsController
-            ArticleAdminViewController controller = loader.getController();
-            controller.setArticle(article);
+            UserArticleViewViewController controller = loader.getController();
+            controller.setArticle(article);// sending the article from this class to the next
+            controller.setArticleList(articleList); // sending the article list from this class to the next
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
@@ -85,12 +87,14 @@ public class ArticlePageUserViewController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+
     }
 
     private void loadArticles() {
         try {
             // Query to fetch only the required columns
-            String query = "SELECT article_id, title, content, author, articleText, date_published FROM article";
+            String query = "SELECT article_id, title, content, author, articleText, date_published, category FROM article";
             ResultSet resultSet = DatabaseHandler.search(query);
 
             // Iterate through the result set and add articles to the list
@@ -102,6 +106,7 @@ public class ArticlePageUserViewController {
                 article.setAuthor(resultSet.getString("author"));
                 article.setArticleText(resultSet.getString("articleText"));
                 article.setDatePublished(resultSet.getString("date_published"));
+                article.setCategory(resultSet.getString("category"));
                 articleList.add(article);
             }
         } catch (SQLException e) {
