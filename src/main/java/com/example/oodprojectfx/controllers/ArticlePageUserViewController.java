@@ -129,7 +129,7 @@ public class ArticlePageUserViewController {
 
     @FXML
     public void onHomeButtonClick(ActionEvent event) {
-        changeToNextScene(event, "/com/example/oodprojectfx/views/homeUserView-view.fxml");
+        changeToNextScene(event, "/com/example/oodprojectfx/views/homeUser-view.fxml");
     }
 
     @FXML

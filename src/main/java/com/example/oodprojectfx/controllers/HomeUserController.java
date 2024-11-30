@@ -24,6 +24,7 @@ public class HomeUserController {
 
     @FXML
     public void onRecommendationButtonClick(ActionEvent event) {
+        changeToNextScene(event, "/com/example/oodprojectfx/views/recommendation-view.fxml");
     }
     private void changeToNextScene(ActionEvent event, String fxmlFile) {
         try {

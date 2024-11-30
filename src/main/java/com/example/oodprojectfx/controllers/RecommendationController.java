@@ -118,15 +118,28 @@ public class RecommendationController {
     @FXML
     public void onHomeButtonClick(ActionEvent event) {
         // Navigate to home
+        changeToNextScene(event, "/com/example/oodprojectfx/views/homeUser-view.fxml");
     }
 
     @FXML
     public void onArticleButtonClick(ActionEvent event) {
         // Navigate to articles
+        changeToNextScene(event, "/com/example/oodprojectfx/views/articlePageUserView-view.fxml");
     }
 
     @FXML
     public void onRecommendationButtonClick(ActionEvent event) {
         // Refresh recommendations
+    }
+    private void changeToNextScene(ActionEvent event, String fxmlFile) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
