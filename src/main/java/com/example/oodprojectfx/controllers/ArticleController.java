@@ -5,10 +5,16 @@ import com.example.oodprojectfx.models.Article;
 import com.example.oodprojectfx.models.UserSession;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -25,8 +31,22 @@ public class ArticleController {
 
     @FXML
     public void onBackButtonClick(ActionEvent event) {
+        changeToNextScene(event, "/com/example/oodprojectfx/views/articlePageUserView-view.fxml");
 
     }
+
+    private void changeToNextScene(ActionEvent event, String fxmlFile) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     @FXML
     public void onLikeButtonClick(ActionEvent event) {
         userSession = UserSession.getInstance();

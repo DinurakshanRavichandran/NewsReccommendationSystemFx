@@ -106,6 +106,7 @@ public class RecommendationController {
             // Pass article data to details controller
             UserArticleViewViewController controller = loader.getController();
             controller.setArticle(article);
+            controller.setArticleList(articleList);
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));

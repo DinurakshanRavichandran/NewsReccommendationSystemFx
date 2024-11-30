@@ -1,0 +1,108 @@
+/* General Styles */
+.root {
+    -fx-background-color: #f4f6f9; /* Light greyish-blue background for the scene */
+    -fx-font-family: 'Segoe UI', sans-serif; /* Modern font for readability */
+    -fx-padding: 10px;
+}
+
+/* Labels */
+.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333; /* Dark grey text for better contrast */
+    -fx-font-weight: bold;
+}
+
+/* Text Fields */
+.text-field {
+    -fx-background-color: #ffffff; /* White background for text fields */
+    -fx-border-color: #b0c4de; /* Light blue border */
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px;
+    -fx-font-size: 14px;
+    -fx-text-fill: #333; /* Dark text for readability */
+}
+
+.text-field:focused {
+    -fx-border-color: #4682b4; /* Deep blue border on focus */
+}
+
+/* Text Area */
+.text-area {
+    -fx-background-color: #ffffff; /* White background */
+    -fx-border-color: #b0c4de;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 10px;
+    -fx-font-size: 14px;
+    -fx-text-fill: #333;
+}
+
+.text-area:focused {
+    -fx-border-color: #4682b4;
+}
+
+/* Buttons */
+.button {
+    -fx-background-color: #4682b4; /* Deep blue buttons */
+    -fx-text-fill: #ffffff; /* White text for contrast */
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px 15px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 4, 0, 0, 2); /* Subtle shadow */
+}
+
+.button:hover {
+    -fx-background-color: #5a9bd6; /* Lighter blue on hover */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 6, 0, 0, 2);
+}
+
+.button:pressed {
+    -fx-background-color: #2a5885; /* Darker blue for pressed state */
+}
+
+/* Back Button */
+#backButton {
+    -fx-background-color: #f28482; /* Soft red for back button */
+}
+
+#backButton:hover {
+    -fx-background-color: #f56f68; /* Lighter red on hover */
+}
+
+#backButton:pressed {
+    -fx-background-color: #d9534f; /* Darker red for pressed state */
+}
+
+/* Skip Button */
+#skipButton {
+    -fx-background-color: #f4a261; /* Muted orange */
+}
+
+#skipButton:hover {
+    -fx-background-color: #e59453; /* Darker orange on hover */
+}
+
+/* Read Button */
+#readButton {
+    -fx-background-color: #2a9d8f; /* Teal for read button */
+}
+
+#readButton:hover {
+    -fx-background-color: #21867a; /* Darker teal on hover */
+}
+
+/* HBox Styling */
+.hbox {
+    -fx-spacing: 10px; /* Space between children in HBoxes */
+    -fx-alignment: CENTER;
+}
+
+/* VBox Styling */
+.vbox {
+    -fx-spacing: 10px; /* Space between children in VBoxes */
+    -fx-padding: 10px;
+}

@@ -72,9 +72,21 @@ public class UserArticleViewViewController {
             System.out.println("No more articles to display ");
         }
     }
+    private void changeToNextScene(ActionEvent event, String fxmlFile) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @FXML
     public void onBackButtonClick(ActionEvent event) {
+        changeToNextScene(event, "/com/example/oodprojectfx/views/articlePageUserView-view.fxml");
     }
 
     @FXML

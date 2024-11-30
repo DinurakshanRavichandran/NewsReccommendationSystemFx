@@ -120,6 +120,7 @@ public class RegisterController {
 
     @FXML
     public void onSignInButtonClick(ActionEvent event) {
+        changeToNextScene(event, "/com/example/oodprojectfx/views/login-view.fxml");
     }
 
     private void showAlert(String title, String message)
@@ -129,6 +130,17 @@ public class RegisterController {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+    private void changeToNextScene(ActionEvent event, String fxmlFile) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 

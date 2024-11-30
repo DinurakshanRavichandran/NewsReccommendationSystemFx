@@ -40,9 +40,9 @@ public class LoginController {
     void onLoginButtonClick(ActionEvent event) {
         String email = emailField.getText().trim();
         String password = PasswordField.getText().trim();
+
         // check if the email and password are empty
-        if(email.isEmpty() || password.isEmpty())
-        {
+        if(email.isEmpty() || password.isEmpty()) {
             showAlert("Empty fields", "Please fill in the required fields");
             return;
         }
@@ -63,7 +63,7 @@ public class LoginController {
                 {
                     User currentUser = new User(username, email);
                     UserSession.getInstance().setCurrentUser(currentUser);
-                    System.out.println("Session created");
+                    System.out.println("Session created for " + username);
                     //credentials are correct, proceed to next scene accordingly based on accountType
                     String fxmlPath;
                     if( accountType.equalsIgnoreCase("Admin"))

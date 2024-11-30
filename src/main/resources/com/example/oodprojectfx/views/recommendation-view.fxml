@@ -9,13 +9,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oodprojectfx.controllers.RecommendationController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@../css/recommendationView.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oodprojectfx.controllers.RecommendationController">
    <children>
       <HBox layoutX="-5.0" layoutY="-5.0" prefHeight="66.0" prefWidth="918.0">
          <children>
             <HBox prefHeight="78.0" prefWidth="310.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="47.0" prefWidth="310.0" text="Quick Insights ">
+                  <Label alignment="CENTER" prefHeight="47.0" prefWidth="310.0" style="-fx-font-size: 36px; -fx-font-weight: bold;" text="Quick Insights ">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -25,7 +25,7 @@
             <HBox prefHeight="54.0" prefWidth="325.0" />
             <HBox prefHeight="54.0" prefWidth="200.0">
                <children>
-                  <Label alignment="CENTER_RIGHT" prefHeight="54.0" prefWidth="200.0" text="User Name ">
+                  <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="54.0" prefWidth="200.0" text="User Name ">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -46,7 +46,16 @@
          <children>
             <HBox alignment="CENTER" prefHeight="58.0" prefWidth="181.0">
                <children>
-                  <Button fx:id="homeButton" mnemonicParsing="false" onAction="#onHomeButtonClick" prefHeight="38.0" prefWidth="186.0" style="-fx-background-radius: 50; -fx-border-radius: 50;" text="Home">
+                  <Button fx:id="homeButton" mnemonicParsing="false" onAction="#onHomeButtonClick" prefHeight="38.0" prefWidth="186.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold; -fx-padding: 10px 20px; -fx-border-radius: 8px; -fx-background-radius: 8px;" text="Home">
+                     <font>
+                        <Font name="Calibri" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="58.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="articleButton" mnemonicParsing="false" onAction="#onArticleButtonClick" prefHeight="38.0" prefWidth="185.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold; -fx-border-radius: 8px; -fx-background-radius: 8px; -fx-padding: 10px 20px;" text="Articles">
                      <font>
                         <Font name="Calibri Bold" size="18.0" />
                      </font>
@@ -55,16 +64,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="58.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="articleButton" mnemonicParsing="false" onAction="#onArticleButtonClick" prefHeight="38.0" prefWidth="185.0" style="-fx-background-radius: 50; -fx-border-radius: 50;" text="Articles">
-                     <font>
-                        <Font name="Calibri Bold" size="18.0" />
-                     </font>
-                  </Button>
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="58.0" prefWidth="200.0">
-               <children>
-                  <Button fx:id="RecommendationButton" mnemonicParsing="false" onAction="#onRecommendationButtonClick" prefHeight="38.0" prefWidth="184.0" style="-fx-background-radius: 50; -fx-border-radius: 50;" text="Recommendation">
+                  <Button fx:id="RecommendationButton" mnemonicParsing="false" onAction="#onRecommendationButtonClick" prefHeight="48.0" prefWidth="190.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold; -fx-border-radius: 8px; -fx-background-radius: 8px; -fx-padding: 10px 20px;" text="Recommendation">
                      <font>
                         <Font name="Calibri Bold" size="18.0" />
                      </font>
@@ -78,8 +78,8 @@
             <TableView fx:id="articleTable" layoutX="19.0" layoutY="36.0" prefHeight="374.0" prefWidth="668.0">
                <columns>
                   <TableColumn fx:id="titleField" prefWidth="356.7999572753906" />
-                  <TableColumn fx:id="authorField" prefWidth="241.5999755859375" />
-                  <TableColumn fx:id="viewButtonField" minWidth="6.40008544921875" prefWidth="68.80010986328125" />
+                  <TableColumn fx:id="authorField" prefWidth="228.79998779296875" />
+                  <TableColumn fx:id="viewButtonField" minWidth="6.40008544921875" prefWidth="82.4000244140625" />
                </columns>
             </TableView>
          </children>

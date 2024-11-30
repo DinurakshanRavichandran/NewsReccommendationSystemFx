@@ -1,21 +1,19 @@
 package com.example.oodprojectfx.models;
 
 public class UserSession {
-    private static UserSession instance;
+    //Thread local to store user sessions for each thread independently
+    private static final ThreadLocal<UserSession> threadLocalInstance = ThreadLocal.withInitial(UserSession :: new);
     private User currentUser;
 
     private UserSession()
     {
 
-    }// private constructor to enforce singleton
+    }
 
+    // private constructor to enforce singleton
     public static UserSession getInstance()
     {
-        if(instance ==  null)
-        {
-            instance = new UserSession();
-        }
-        return instance;
+        return threadLocalInstance.get();
     }
 
     public void setCurrentUser( User currentUser)

@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oodprojectfx.controllers.UserArticleViewViewController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../css/userArticleViewView.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oodprojectfx.controllers.UserArticleViewViewController">
    <children>
       <HBox prefHeight="51.0" prefWidth="608.0">
          <children>

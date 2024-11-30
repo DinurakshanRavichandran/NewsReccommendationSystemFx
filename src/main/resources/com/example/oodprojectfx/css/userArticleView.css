@@ -1,0 +1,70 @@
+/* General Styles for the Scene */
+.root {
+    -fx-background-color: #f9f9f9; /* Light background for readability */
+    -fx-font-family: 'Segoe UI', sans-serif; /* Modern and clean font */
+}
+
+/* Text Field Styles */
+.text-field {
+    -fx-background-color: #fffbea; /* Soft yellow background for input fields */
+    -fx-border-color: #e3b505; /* Muted yellow border for consistency */
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px;
+    -fx-font-size: 14px;
+    -fx-text-fill: #333; /* Dark text for contrast */
+}
+
+/* TextArea Styles */
+.text-area {
+    -fx-background-color: #fffbea; /* Soft yellow background */
+    -fx-border-color: #e3b505;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 10px;
+    -fx-font-size: 14px;
+    -fx-text-fill: #333;
+}
+
+/* Button Styles */
+.button {
+    -fx-background-color: #ffd60a; /* Bright yellow for buttons */
+    -fx-text-fill: #000; /* Black text for contrast */
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-border-color: #e3b505; /* Muted yellow border for consistency */
+    -fx-padding: 5px 10px;
+    -fx-cursor: hand; /* Pointer cursor on hover */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 4, 0, 0, 2); /* Subtle shadow */
+}
+
+.button:hover {
+    -fx-background-color: #ffcc00; /* Darker yellow on hover */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 6, 0, 0, 2); /* Enhanced shadow */
+}
+
+.button:pressed {
+    -fx-background-color: #e3b505; /* Muted yellow for pressed state */
+}
+
+/* Back Button Specific */
+#backButton {
+    -fx-background-color: #f4a261; /* Muted orange for "Back" */
+    -fx-text-fill: #fff; /* White text for contrast */
+}
+
+#backButton:hover {
+    -fx-background-color: #e76f51; /* Darker orange on hover */
+}
+
+/* Like Button Specific */
+#likeButton {
+    -fx-background-color: #2a9d8f; /* Teal for "Like" */
+    -fx-text-fill: #fff;
+}
+
+#likeButton:hover {
+    -fx-background-color: #21867a; /* Darker teal on hover */
+}

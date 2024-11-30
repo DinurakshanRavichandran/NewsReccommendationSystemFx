@@ -1,0 +1,81 @@
+/* General styles for the entire AnchorPane */
+.root {
+    -fx-background-color: #f4f4f9; /* Light background for the whole page */
+    -fx-font-family: "Calibri"; /* Global font */
+}
+
+/* Top HBox styling (header) */
+.hbox > .hbox:first-child > .label {
+    -fx-text-fill: #2c3e50; /* Dark blue-gray text color */
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+}
+
+/* Header label for "User Name" */
+.hbox > .hbox:last-child > .label {
+    -fx-text-fill: #7f8c8d; /* Gray text color */
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+/* Sidebar buttons styling */
+.vbox > .hbox > .button {
+    -fx-background-color: #3498db; /* Blue background for buttons */
+    -fx-text-fill: white; /* White text */
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 8px; /* Rounded corners */
+    -fx-background-radius: 8px;
+    -fx-padding: 10px 20px; /* Padding for better spacing */
+}
+
+.vbox > .hbox > .button:hover {
+    -fx-background-color: #2980b9; /* Darker blue on hover */
+    -fx-cursor: hand; /* Hand cursor on hover */
+}
+
+/* TableView styles */
+.table-view {
+    -fx-background-color: #ecf0f1; /* Light gray table background */
+    -fx-border-color: #bdc3c7; /* Border for the table */
+    -fx-border-radius: 8px; /* Rounded corners */
+    -fx-padding: 10px;
+}
+
+.table-view .column-header {
+    -fx-background-color: #3498db; /* Blue header background */
+    -fx-text-fill: white; /* White text for headers */
+    -fx-font-weight: bold;
+}
+
+.table-view .cell {
+    -fx-background-color: #ffffff; /* White background for cells */
+    -fx-text-fill: #2c3e50; /* Text color for cells */
+}
+
+/* Button inside the TableView (viewButtonColumn) */
+.table-view .cell > .button {
+    -fx-background-color: #2ecc71; /* Green button background */
+    -fx-text-fill: white; /* White text */
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.table-view .cell > .button:hover {
+    -fx-background-color: #27ae60; /* Darker green on hover */
+}
+/* Specific styling for buttons inside the VBox */
+.vbox .hbox .button {
+    -fx-background-color: #3498db; /* Blue background for buttons */
+    -fx-text-fill: white; /* White text */
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 8px; /* Rounded corners */
+    -fx-background-radius: 8px;
+    -fx-padding: 10px 20px; /* Padding for better spacing */
+}
+
+.vbox .hbox .button:hover {
+    -fx-background-color: #2980b9; /* Darker blue on hover */
+    -fx-cursor: hand; /* Hand cursor on hover */
+}

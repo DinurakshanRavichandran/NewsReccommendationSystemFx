@@ -1,0 +1,63 @@
+/* Global Styles */
+.root {
+    -fx-font-family: 'Calibri';
+    -fx-background-color: #f7f9fc; /* Light background color for the root */
+}
+
+/* Header Label (Quick Insights) */
+.label {
+    -fx-text-fill: #2c3e50; /* Dark blue text color */
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+/* Navigation Buttons */
+.button {
+    -fx-background-color: #3498db; /* Blue background */
+    -fx-text-fill: white; /* White text */
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 50; /* Rounded edges */
+    -fx-border-radius: 50; /* Rounded edges */
+    -fx-padding: 10px 20px; /* Padding inside buttons */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 0, 2); /* Subtle shadow */
+}
+
+/* Hover Effect for Buttons */
+.button:hover {
+    -fx-background-color: #2980b9; /* Darker blue when hovered */
+}
+
+/* VBox for Navigation */
+.vbox {
+    -fx-background-color: #ecf0f1; /* Light gray background for navigation bar */
+    -fx-padding: 15px;
+    -fx-spacing: 10px; /* Space between buttons */
+    -fx-border-color: #bdc3c7; /* Light gray border */
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px; /* Slightly rounded corners for VBox */
+}
+
+/* Main Content Area (AnchorPane) */
+.anchor-pane {
+    -fx-background-color: #ffffff; /* White content background */
+    -fx-padding: 15px;
+    -fx-border-color: #dcdcdc; /* Light gray border */
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 5); /* Light shadow */
+}
+
+/* Header Section HBox */
+.hbox {
+    -fx-background-color: #3498db; /* Blue header background */
+    -fx-padding: 10px;
+    -fx-spacing: 10px;
+    -fx-alignment: center-left;
+}
+
+/* Inner HBox for Spacing */
+.hbox > .hbox {
+    -fx-background-color: transparent; /* Transparent spacing */
+}

@@ -17,7 +17,7 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="54.0" prefWidth="129.0">
                      <children>
-                        <Button fx:id="signUpButton" mnemonicParsing="false" onAction="#onSignUpButtonClick" prefHeight="30.0" prefWidth="100.0" style="-fx-background-radius: 50; -fx-border-radius: 50;" text="Sign Up">
+                        <Button fx:id="signUpButton" mnemonicParsing="false" onAction="#onSignUpButtonClick" prefHeight="36.0" prefWidth="100.0" style="-fx-background-radius: 50; -fx-border-radius: 50;" text="Sign Up">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
