@@ -1,6 +1,9 @@
 package com.example.oodprojectfx.controllers;
 
+import com.example.oodprojectfx.database.DatabaseHandler;
 import com.example.oodprojectfx.models.Article;
+import com.example.oodprojectfx.models.User;
+import com.example.oodprojectfx.models.UserSession;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +16,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 public class UserArticleViewViewController {
@@ -74,20 +79,85 @@ public class UserArticleViewViewController {
 
     @FXML
     public void onSkipButtonClick(ActionEvent event) {
-        if(currentIndex < articleList.size() - 1)
+       if(articleList == null | articleList.isEmpty())
+       {
+           System.out.println("No articles available to skip");
+           return;
+       }
+
+       //update the skipped article in the database
+        try {
+            UserSession userSession = UserSession.getInstance();
+            String userEmail = userSession.getCurrentUser().getEmail();
+            String articleId = articleList.get(currentIndex).getArticleId(); // This is a string in the database -- potential error
+
+            //Check whether a row exist for the article
+            String queryCheck = "SELECT * FROM user_article_alloc WHERE email = '" + userEmail + "' AND article_id = " + articleId;
+            ResultSet resultSet = DatabaseHandler.search(queryCheck);
+            if(!resultSet.next()) {
+                //Insert new row if it doesn't exist
+                String queryInsert = "INSERT INTO user_article_alloc (email, article_id) VALUES ('" + userEmail + "', " + articleId + ")";
+                DatabaseHandler.iud(queryInsert);
+                System.out.println("New record inserted into the article");
+            }
+
+
+
+            //Update skipped_article to true in the user_article_alloc table
+            String querySkipArticle = "UPDATE user_article_alloc SET skipped_article = true " +
+                    "WHERE email = '" + userEmail + "' AND article_id = " + articleId;
+
+            DatabaseHandler.iud(querySkipArticle);
+            System.out.println("Article marked as skipped in the database");
+        }catch (Exception e)
+        {
+            System.out.println("Error updating skipped article in the database");
+            e.printStackTrace();
+
+        }
+        if (currentIndex < articleList.size() - 1)
         {
             currentIndex ++;
-        }else {
+        }else{
             currentIndex = 0;
         }
-        // Update selectedArticle to the current article
-        setArticle(articleList.get(currentIndex));
+        //update current article to the selected article
+        setArticle(articleList.get(currentIndex));//..................
     }
 
     @FXML
-    public void onReadButtonClick(ActionEvent event) {
+    public void onReadButtonClick(ActionEvent event) throws SQLException {
+
+        UserSession userSession = UserSession.getInstance();
+        String userEmail = userSession.getCurrentUser().getEmail();
+        String articleId = selectedArticle.getArticleId();
+
+        //Check if the record exists in the user article alloc
+        String queryCheck = "SELECT * FROM user_article_alloc WHERE email = '" + userEmail + "' AND article_id = " + articleId;
+        ResultSet resultSet = DatabaseHandler.search(queryCheck);
+
+        if(!resultSet.next())
+        {
+            //Insert a new record if it doesn't exist
+            String queryInsert = "INSERT INTO user_article_alloc (email, article_id) VALUES ('" + userEmail + "', " + articleId + ")";
+            DatabaseHandler.iud(queryInsert);
+            System.out.println("New record inserted into user_article_alloc for reading.");
+        }
+
+
+        //Update read article to true in the database
+        String queryReadArticle = "UPDATE user_article_alloc SET read_article = true " +
+                "WHERE email = '" + userEmail + "' AND article_id = " + articleId;
+
+        //Increment the number of read count
+        String queryIncrementRead = "UPDATE article SET no_of_read = no_of_read + 1 WHERE article_id = " + articleId;
+        DatabaseHandler.iud(queryIncrementRead);
+        System.out.println("Article read count incremented ");
+
+        DatabaseHandler.iud(queryReadArticle);
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/oodprojectfx/views/articlePage-view.fxml"));
+            //Load the next scene
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/oodprojectfx/views/userArticle-view.fxml"));
             Parent root = loader.load();
 
             // Pass the article details to the ArticleDetailsController

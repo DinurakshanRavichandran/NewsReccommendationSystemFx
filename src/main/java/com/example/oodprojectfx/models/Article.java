@@ -8,6 +8,9 @@ public class Article {
     private String category;
     private String articleText;
     private String datePublished;
+    private int likeCount;
+    private int skipCount;
+    private int readCount;
 
     public Article()
     {
@@ -23,6 +26,25 @@ public class Article {
         this.articleText = articleText;
         this.datePublished = datePublished;
     }
+    public Article(String articleId, String title, String category, int noOfLikes)
+    {
+        this.articleId = articleId;
+        this.title = title;
+        this.category  = category;
+        this.noOfLikes = noOfLikes;
+    }
+
+    public Article(String articleId, String title, String category, String content, String author, String articleText, String datePublished, int likeCount) {
+        this.articleId = articleId;
+        this.title = title;
+        this.category = category;
+        this.content = content;
+        this.author = author;
+        this.articleText = articleText;
+        this.datePublished = datePublished;
+        this.likeCount = likeCount;
+    }
+
 
     private int noOfLikes;
 

@@ -61,7 +61,7 @@ public class LoginController {
                 if(storedPassword.equals(password))
 
                 {
-                    User currentUser = new User(email, username);
+                    User currentUser = new User(username, email);
                     UserSession.getInstance().setCurrentUser(currentUser);
                     System.out.println("Session created");
                     //credentials are correct, proceed to next scene accordingly based on accountType

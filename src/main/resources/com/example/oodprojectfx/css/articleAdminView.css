@@ -1,0 +1,94 @@
+/* General Styling for the Application */
+.root {
+    -fx-font-family: "Arial", sans-serif;
+    -fx-background-color: #f9f9f9; /* Light gray background */
+}
+
+/* Style for Labels */
+.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333; /* Dark gray text */
+    -fx-padding: 5 10 5 10;
+}
+
+/* Style for TextFields */
+.text-field {
+    -fx-background-color: #ffffff; /* White background */
+    -fx-border-color: #0078D7; /* Blue border */
+    -fx-border-radius: 10px; /* Rounded corners */
+    -fx-background-radius: 10px;
+    -fx-padding: 8;
+    -fx-font-size: 14px;
+}
+
+.text-field:hover {
+    -fx-border-color: #0056A3; /* Darker blue on hover */
+}
+
+.text-field:focused {
+    -fx-border-color: #004080; /* Even darker blue on focus */
+    -fx-background-color: #f0f8ff; /* Light blue background */
+}
+
+/* Style for TextArea */
+.text-area {
+    -fx-background-color: #ffffff; /* White background */
+    -fx-border-color: #0078D7; /* Blue border */
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-padding: 10;
+    -fx-font-size: 14px;
+    -fx-wrap-text: true;
+}
+
+.text-area:hover {
+    -fx-border-color: #0056A3;
+}
+
+.text-area:focused {
+    -fx-border-color: #004080;
+    -fx-background-color: #f0f8ff;
+}
+
+/* Style for Buttons */
+.button {
+    -fx-background-color: #4CAF50; /* Green background */
+    -fx-text-fill: white; /* White text */
+    -fx-border-radius: 20px; /* Rounded corners */
+    -fx-background-radius: 20px;
+    -fx-padding: 8 15 8 15;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand; /* Pointer cursor on hover */
+}
+
+.button:hover {
+    -fx-background-color: #45a049; /* Darker green on hover */
+}
+
+.button:focused {
+    -fx-border-color: #2E7D32; /* Focused button border */
+    -fx-border-width: 2px;
+}
+
+/* Specific Button Styling */
+#saveButton {
+    -fx-background-color: #0078D7; /* Blue Save button */
+}
+
+#saveButton:hover {
+    -fx-background-color: #0056A3;
+}
+
+#deleteArticleButton {
+    -fx-background-color: #E53935; /* Red Delete button */
+}
+
+#deleteArticleButton:hover {
+    -fx-background-color: #D32F2F; /* Darker red */
+}
+
+/* Styling for Back Button */
+#backButton {
+    -fx-background-color: #D32F2F;
+}

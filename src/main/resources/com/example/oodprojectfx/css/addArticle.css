@@ -1,0 +1,41 @@
+/* Styles for Labels */
+.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333; /* Dark gray color */
+    -fx-padding: 5 10 5 10;
+}
+
+/* Styles for TextFields */
+.text-field {
+    -fx-background-color: #f5f5f5; /* Light gray background */
+    -fx-border-color: #cccccc; /* Gray border */
+    -fx-border-radius: 10px; /* Rounded corners */
+    -fx-background-radius: 10px; /* Match background to border */
+    -fx-padding: 5;
+}
+
+/* Styles for TextArea */
+.text-area {
+    -fx-background-color: #f5f5f5;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-padding: 10;
+    -fx-font-size: 14px;
+    -fx-wrap-text: true;
+}
+
+/* Styles for Buttons */
+.button {
+    -fx-background-color: #4CAF50; /* Green */
+    -fx-text-fill: white;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-padding: 8 15 8 15;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #45a049; /* Darker green on hover */
+}

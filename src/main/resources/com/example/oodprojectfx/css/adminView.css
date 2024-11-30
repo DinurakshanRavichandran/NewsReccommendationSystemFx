@@ -1,0 +1,76 @@
+/* General Application Styling */
+.root {
+    -fx-font-family: "Arial", sans-serif;
+    -fx-background-color: #f9f9f9; /* Light background */
+}
+
+/* Styling for Labels */
+.label {
+    -fx-font-size: 20px; /* Slightly smaller font size */
+    -fx-text-fill: #333333; /* Dark gray for readability */
+    -fx-font-weight: bold; /* Bold font */
+    -fx-padding: 10;
+}
+
+/* Styling for Buttons */
+.button {
+    -fx-background-color: #0078D7; /* Blue background */
+    -fx-text-fill: white; /* White text */
+    -fx-font-size: 14px; /* Standard font size */
+    -fx-font-weight: bold; /* Bold text for clarity */
+    -fx-border-radius: 8px; /* Rounded corners */
+    -fx-background-radius: 8px;
+    -fx-padding: 8 15 8 15; /* Adjust padding for better spacing */
+    -fx-cursor: hand; /* Hand cursor on hover */
+}
+
+.button:hover {
+    -fx-background-color: #0056A3; /* Darker blue on hover */
+}
+
+.button:focused {
+    -fx-border-color: #004080; /* Blue border on focus */
+    -fx-border-width: 2px;
+}
+
+/* Specific Button Styling */
+#dashboard {
+    -fx-background-color: #4CAF50; /* Green for Dashboard */
+}
+
+#dashboard:hover {
+    -fx-background-color: #388E3C; /* Darker green on hover */
+}
+
+#articleButton {
+    -fx-background-color: #FF9800; /* Orange for Articles */
+}
+
+#articleButton:hover {
+    -fx-background-color: #FB8C00; /* Darker orange on hover */
+}
+
+#viewLogsButton {
+    -fx-background-color: #E53935; /* Red for Logs */
+}
+
+#viewLogsButton:hover {
+    -fx-background-color: #D32F2F; /* Darker red on hover */
+}
+
+/* Styling for HBox */
+.hbox {
+    -fx-spacing: 10; /* Add space between children */
+    -fx-padding: 10; /* Padding around HBox content */
+}
+
+/* Styling for VBox */
+.vbox {
+    -fx-spacing: 20; /* Add space between buttons/labels */
+    -fx-padding: 20; /* Padding inside VBox for alignment */
+    -fx-background-color: #E3F2FD; /* Light blue background for side menu */
+    -fx-border-color: #90CAF9; /* Soft blue border for contrast */
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px; /* Rounded border */
+    -fx-background-radius: 8px;
+}

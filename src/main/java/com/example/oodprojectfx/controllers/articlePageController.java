@@ -137,6 +137,7 @@ public class articlePageController {
     }
 
 
-
-
+    public void onDashboardButtonClick(ActionEvent event) {
+        changeScene(event, "/com/example/oodprojectfx/views/admin-view.fxml");
+    }
 }

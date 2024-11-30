@@ -9,11 +9,18 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1365.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oodprojectfx.controllers.ArticleAdminViewController">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1365.0" prefWidth="1200.0" stylesheets="@../css/articleAdminView.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oodprojectfx.controllers.ArticleAdminViewController">
    <content>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1327.0" prefWidth="1200.0">
          <children>
-            <VBox prefHeight="1334.0" prefWidth="172.0" />
+            <VBox prefHeight="1334.0" prefWidth="172.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="59.0" prefWidth="172.0">
+                     <children>
+                        <Button fx:id="backButton" mnemonicParsing="false" onAction="#onBackButtonClick" prefHeight="36.0" prefWidth="130.0" text="Back" />
+                     </children>
+                  </HBox>
+               </children></VBox>
             <HBox layoutX="210.0" prefHeight="100.0" prefWidth="988.0" />
             <VBox layoutX="210.0" layoutY="100.0" prefHeight="1230.0" prefWidth="188.0">
                <children>
@@ -32,7 +39,7 @@
                         <Label text="Author :" />
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_RIGHT" prefHeight="62.0" prefWidth="188.0">
+                  <HBox alignment="CENTER_RIGHT" prefHeight="62.0" prefWidth="188.0" stylesheets="@../css/articleAdminView.css">
                      <children>
                         <Label text="Article material :" />
                      </children>

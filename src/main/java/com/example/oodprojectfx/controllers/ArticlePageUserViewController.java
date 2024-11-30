@@ -115,15 +115,29 @@ public class ArticlePageUserViewController {
         }
     }
 
+    private void changeToNextScene(ActionEvent event, String fxmlFile) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     @FXML
     public void onHomeButtonClick(ActionEvent event) {
-
+        changeToNextScene(event, "/com/example/oodprojectfx/views/homeUserView-view.fxml");
     }
 
     @FXML
     public void onArticleButtonClick(ActionEvent event) {
+        changeToNextScene(event, "/com/example/oodprojectfx/views/articlePageUserView-view.fxml");
     }
 
     public void onRecommendationButtonClick(ActionEvent event) {
+        changeToNextScene(event, "/com/example/oodprojectfx/views/recommendation-view.fxml");
     }
 }

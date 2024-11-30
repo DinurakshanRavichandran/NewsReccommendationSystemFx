@@ -144,4 +144,21 @@ public class ArticleAdminViewController {
                 }
             }
         });
-    }}
+    }
+
+    public void onBackButtonClick(ActionEvent event) {
+       changeScene(event, "/com/example/oodprojectfx/views/articlePage-view.fxml");
+    }
+
+    private void changeScene(ActionEvent event, String fxmlFile) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}

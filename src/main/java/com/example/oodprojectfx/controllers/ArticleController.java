@@ -55,6 +55,7 @@ public class ArticleController {
 
 
             }else{
+
                 //If the article is already liked unlike the article
                 String queryUnlikeArticle = "UPDATE article SET no_of_likes = no_of_likes - 1 WHERE article_id = " + articleId;
                 DatabaseHandler.iud(queryUnlikeArticle);

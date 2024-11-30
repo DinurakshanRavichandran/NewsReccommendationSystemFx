@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -10,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oodprojectfx.controllers.articlePageController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@../css/articlePageView.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oodprojectfx.controllers.articlePageController">
    <children>
       <HBox layoutX="210.0" prefHeight="62.0" prefWidth="701.0" />
       <VBox prefHeight="590.0" prefWidth="209.0">
@@ -30,32 +29,27 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="62.0" prefWidth="180.0">
                <children>
-                  <Button alignment="CENTER" mnemonicParsing="false" text="DashBoard" />
+                  <Button fx:id="dashBoardButton" alignment="CENTER" mnemonicParsing="false" onAction="#onDashboardButtonClick" text="DashBoard" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="62.0" prefWidth="180.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="75.0" text="Article" />
+                  <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="114.0" text="Article" />
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="180.0">
-               <children>
-                  <Button mnemonicParsing="false" text="View Logs " />
-               </children>
-            </HBox>
+            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="180.0" />
          </children>
       </VBox>
       <AnchorPane layoutX="213.0" layoutY="72.0" prefHeight="528.0" prefWidth="694.0">
          <children>
-            <TableView fx:id="articleTable" layoutX="38.0" layoutY="64.0" prefHeight="338.0" prefWidth="610.0">
+            <TableView fx:id="articleTable" layoutX="11.0" layoutY="64.0" prefHeight="338.0" prefWidth="668.0">
               <columns>
-                <TableColumn fx:id="titleField" minWidth="30.0" prefWidth="287.1999206542969" />
-                <TableColumn fx:id="authorField" prefWidth="227.20001220703125" />
-                  <TableColumn fx:id="viewButtonField" prefWidth="93.5999755859375" />
+                <TableColumn fx:id="titleField" minWidth="30.0" prefWidth="342.4000244140625" />
+                <TableColumn fx:id="authorField" prefWidth="211.2000732421875" />
+                  <TableColumn fx:id="viewButtonField" prefWidth="114.39990234375" />
               </columns>
             </TableView>
-            <ScrollBar layoutX="648.0" layoutY="64.0" orientation="VERTICAL" prefHeight="338.0" prefWidth="14.0" />
-            <Button fx:id="addArticleButton" layoutX="82.0" layoutY="428.0" mnemonicParsing="false" onAction="#onAddArticleButtonClick" text="Add article " />
+            <Button fx:id="addArticleButton" layoutX="17.0" layoutY="428.0" mnemonicParsing="false" onAction="#onAddArticleButtonClick" prefHeight="30.0" prefWidth="216.0" text="Add article " />
          </children>
       </AnchorPane>
    </children>
