@@ -1,5 +1,6 @@
 package com.example.oodprojectfx.controllers;
 
+import com.example.oodprojectfx.models.UserSession;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -38,4 +39,8 @@ public class HomeUserController {
         }
     }
 
+    public void onLogoutButtonClick(ActionEvent event) {
+        UserSession.getInstance().clearSession();
+        changeToNextScene(event, "/com/example/oodprojectfx/views/login-view.fxml");
+    }
 }

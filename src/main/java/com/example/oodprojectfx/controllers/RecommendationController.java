@@ -143,4 +143,9 @@ public class RecommendationController {
             e.printStackTrace();
         }
     }
+
+    public void onLogoutButtonClick(ActionEvent event) {
+        UserSession.getInstance().clearSession();
+        changeToNextScene(event, "/com/example/oodprojectfx/views/login-view.fxml");
+    }
 }

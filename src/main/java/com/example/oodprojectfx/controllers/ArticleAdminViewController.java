@@ -118,9 +118,14 @@ public class ArticleAdminViewController {
         confirmationAlert.setContentText("Are you sure you want to delete this article?");
         confirmationAlert.showAndWait().ifPresent(response -> {
             if (response.getText().equals("OK")) { // Proceed if user confirms
-                // Construct the SQL DELETE query
-                String query = "DELETE FROM article WHERE article_id = " + articleId;
+
                 try {
+                    // Delete references in user_article_alloc
+                    String deleteAllocQuery = "DELETE FROM user_article_alloc WHERE article_id = " + articleId;
+                    DatabaseHandler.iud(deleteAllocQuery);
+
+                    // Construct the SQL DELETE query
+                    String query = "DELETE FROM article WHERE article_id = " + articleId;
                     //Execute the delete query
                     DatabaseHandler.iud(query);
 

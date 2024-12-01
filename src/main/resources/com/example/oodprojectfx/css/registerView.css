@@ -1,0 +1,110 @@
+/* General Styles */
+.root {
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-font-size: 14px;
+}
+
+/* VBox Background Styling */
+#hboxRight {
+    -fx-background-color: #1a1a1a; /* Dark background for the left VBox */
+    -fx-background-image: url("statsBackgroundImage.jpg"); /* Replace with your black-themed image */
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+
+#hboxLeft {
+    -fx-background-color: #001f3f; /* Blue background for the right VBox */
+    -fx-background-image: url("userHomePageBackground.jpg"); /* Replace with your blue-themed image */
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+
+/* Buttons */
+.button {
+    -fx-background-color: linear-gradient(to bottom, #0078d7, #005fa3); /* Smooth blue gradient */
+    -fx-text-fill: white; /* White text for contrast */
+    -fx-font-weight: bold;
+    -fx-border-color: transparent; /* No border for a cleaner look */
+    -fx-border-radius: 25; /* Circular button edges */
+    -fx-background-radius: 25;
+    -fx-padding: 10 20 10 20; /* Add padding for better proportions */
+    -fx-cursor: hand; /* Pointer cursor on hover */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0, 0, 1);
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to bottom, #005fa3, #0078d7); /* Inverted hover effect */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 8, 0, 0, 2); /* Enhance shadow */
+}
+
+.button:pressed {
+    -fx-background-color: #004d80; /* Darker blue for pressed state */
+    -fx-effect: inset 0 2px 4px rgba(0, 0, 0, 0.5); /* Pressed inset shadow effect */
+}
+
+/* TextFields and PasswordFields */
+.text-field, .password-field {
+    -fx-background-color: rgba(255, 255, 255, 0.9); /* Slightly translucent white background */
+    -fx-border-color: #0078d7; /* Vibrant blue border */
+    -fx-border-width: 2;
+    -fx-border-radius: 25; /* Rounded corners */
+    -fx-background-radius: 25;
+    -fx-padding: 10 15 10 15; /* Add padding inside fields */
+    -fx-text-fill: #333333; /* Dark grey text */
+    -fx-font-size: 14px;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #00aaff; /* Bright cyan border on focus */
+    -fx-effect: dropshadow(gaussian, #00aaff, 6, 0, 0, 0); /* Glow effect */
+}
+
+/* CheckBox */
+.check-box {
+    -fx-text-fill: #ffffff; /* White text for dark background */
+    -fx-font-size: 13px;
+}
+
+.check-box .box {
+    -fx-border-color: #ffffff;
+    -fx-border-radius: 5; /* Smooth edges */
+    -fx-border-width: 1;
+    -fx-background-color: transparent;
+}
+
+.check-box:selected .box {
+    -fx-background-color: #0078d7; /* Blue background when selected */
+    -fx-border-color: #0078d7; /* Match border with the selected color */
+}
+
+/* Fonts for Text */
+.text-field, .password-field, .button {
+    -fx-font-family: 'Calibri', sans-serif;
+    -fx-font-size: 16px;
+}
+
+/* HBox Styling */
+.hbox {
+    -fx-spacing: 10px;
+    -fx-alignment: CENTER;
+}
+
+/* Apply spacing and padding to VBoxes */
+.vbox {
+    -fx-padding: 20px;
+    -fx-spacing: 15px;
+}
+
+/* Add shadow to VBoxes for a polished effect */
+#hboxRight, #hboxLeft {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0, 0, 4);
+}
+
+/* Hover animations for a polished feel */
+.button {
+    -fx-transition: all 0.3s ease;
+}
+
+.text-field, .password-field {
+    -fx-transition: all 0.2s ease;
+}
