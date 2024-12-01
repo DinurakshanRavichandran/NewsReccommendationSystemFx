@@ -1,5 +1,6 @@
 package com.example.oodprojectfx.controllers;
 
+import com.example.oodprojectfx.models.UserSession;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -45,5 +46,10 @@ public class adminController
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void onLogoutButtonClick(ActionEvent event) {
+        UserSession.getInstance().clearSession();
+        changeScene(event, "/com/example/oodprojectfx/views/login-view.fxml");
     }
 }

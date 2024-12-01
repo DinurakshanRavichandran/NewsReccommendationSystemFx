@@ -34,7 +34,12 @@
                   <Button fx:id="articleButton" mnemonicParsing="false" onAction="#onArticleButtonClick" prefHeight="32.0" prefWidth="109.0" text="Article" />
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="180.0" />
+            <HBox alignment="CENTER" prefHeight="340.0" prefWidth="210.0" />
+            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="210.0">
+               <children>
+                  <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#onLogoutButtonClick" prefHeight="43.0" prefWidth="180.0" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-family: 'Calibri', sans-serif; -fx-font-size: 18px; -fx-font-weight: bold; -fx-border-color: #c0392b; -fx-border-width: 2px; -fx-border-radius: 2px; -fx-background-radius: 2px; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 4, 0, 0, 2); -fx-cursor: hand;" text="Log Out" />
+               </children>
+            </HBox>
          </children>
       </VBox>
       <HBox layoutX="210.0" prefHeight="62.0" prefWidth="704.0" />

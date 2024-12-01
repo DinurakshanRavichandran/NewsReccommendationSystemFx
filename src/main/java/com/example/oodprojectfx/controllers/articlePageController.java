@@ -2,6 +2,7 @@ package com.example.oodprojectfx.controllers;
 
 import com.example.oodprojectfx.database.DatabaseHandler;
 import com.example.oodprojectfx.models.Article;
+import com.example.oodprojectfx.models.UserSession;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -139,5 +140,10 @@ public class articlePageController {
 
     public void onDashboardButtonClick(ActionEvent event) {
         changeScene(event, "/com/example/oodprojectfx/views/admin-view.fxml");
+    }
+
+    public void onLogoutButtonClick(ActionEvent event) {
+        UserSession.getInstance().clearSession();
+        changeScene(event, "/com/example/oodprojectfx/views/login-view.fxml");
     }
 }
