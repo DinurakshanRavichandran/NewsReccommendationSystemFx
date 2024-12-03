@@ -98,30 +98,40 @@ public class NLPPipeline {
         };
 
 
-        int techScore = 0, sportsScore = 0, politicsScore = 0, celebrityScore = 0, businessScore = 0;
+        // Initialize scores for each category
+        int[] scores = new int[5]; // Index 0: Technology, 1: Sports, 2: Politics, 3: Celebrity, 4: Business
 
+        // Prepare the document for annotation
         CoreDocument coreDocument = new CoreDocument(article);
         getPipeline().annotate(coreDocument);
 
-        for (CoreLabel token : coreDocument.tokens()) {
+        // Process tokens concurrently
+        coreDocument.tokens().parallelStream().forEach(token -> {
             String word = token.word().toLowerCase();
-            if (containsWord(word, technologyKeywords)) techScore++;
-            if (containsWord(word, sportsKeywords)) sportsScore++;
-            if (containsWord(word, politicsKeywords)) politicsScore++;
-            if (containsWord(word, celebrityKeywords)) celebrityScore++;
-            if (containsWord(word, businessKeywords)) businessScore++;
-        }
+            if (containsWord(word, technologyKeywords)) synchronized (scores) { scores[0]++; }
+            if (containsWord(word, sportsKeywords)) synchronized (scores) { scores[1]++; }
+            if (containsWord(word, politicsKeywords)) synchronized (scores) { scores[2]++; }
+            if (containsWord(word, celebrityKeywords)) synchronized (scores) { scores[3]++; }
+            if (containsWord(word, businessKeywords)) synchronized (scores) { scores[4]++; }
+        });
 
         // Determine the highest-scoring category
-        int maxScore = Math.max(Math.max(techScore, sportsScore),
-                Math.max(politicsScore, Math.max(celebrityScore, businessScore)));
-        if (maxScore == techScore) return "Technology";
-        if (maxScore == sportsScore) return "Sports";
-        if (maxScore == politicsScore) return "Politics";
-        if (maxScore == celebrityScore) return "Celebrity";
-        if (maxScore == businessScore) return "Business";
+        int maxScoreIndex = 0;
+        for (int i = 1; i < scores.length; i++) {
+            if (scores[i] > scores[maxScoreIndex]) {
+                maxScoreIndex = i;
+            }
+        }
 
-        return "Uncategorized";
+        // Return the category based on the highest score
+        switch (maxScoreIndex) {
+            case 0: return "Technology";
+            case 1: return "Sports";
+            case 2: return "Politics";
+            case 3: return "Celebrity";
+            case 4: return "Business";
+            default: return "Uncategorized";
+        }
     }
 
     private boolean containsWord(String word, String[] keywords) {

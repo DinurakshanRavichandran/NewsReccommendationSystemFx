@@ -62,7 +62,7 @@ public class FileHandler {
                     insertStmt.setString(6, category);
 
                     insertStmt.executeUpdate();
-                    System.out.println("Article added successfully: " + title);
+                    System.out.println("Article added successfully: " + title + "to category " + category);
 
                 } catch (SQLException e) {
                     System.out.println("Error processing article: " + title);
