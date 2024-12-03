@@ -7,15 +7,33 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
-
+import javafx.fxml.Initializable;
+import java.net.URL;
+import java.util.ResourceBundle;
 import java.io.IOException;
 
-public class HomeUserController {
+
+public class HomeUserController implements Initializable {
+
+
+    @FXML
+    public Label userNameTag;
 
     @FXML
     public void onHomeButtonClick(ActionEvent event) {
 
+    }
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        // Fetch the username from the UserSession and set it to the userNameTag
+        String username = UserSession.getInstance().getCurrentUser().getUsername(); // Adjust method name if different
+        if (username != null) {
+            userNameTag.setText(username);
+        } else {
+            userNameTag.setText("Guest"); // Default fallback
+        }
     }
 
     @FXML

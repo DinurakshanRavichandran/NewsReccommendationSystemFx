@@ -74,3 +74,9 @@
     -fx-border-radius: 8px; /* Rounded border */
     -fx-background-radius: 8px;
 }
+#homeBackground {
+    -fx-background-image: url('newsPaper.jpg'); /* Path to your image */
+    -fx-background-repeat: no-repeat; /* Prevent image repetition */
+    -fx-background-size: cover; /* Scale the image to cover the AnchorPane */
+    -fx-background-position: center; /* Center the image */
+}

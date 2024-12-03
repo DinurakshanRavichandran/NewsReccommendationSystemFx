@@ -21,9 +21,9 @@
                </children>
             </HBox>
             <HBox prefHeight="54.0" prefWidth="325.0" />
-            <HBox prefHeight="54.0" prefWidth="200.0">
+            <HBox prefHeight="66.0" prefWidth="264.0">
                <children>
-                  <Label alignment="CENTER_RIGHT" prefHeight="54.0" prefWidth="200.0" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #34495e; -fx-alignment: center-right;" text="User Name ">
+                  <Label fx:id="userNameTag" alignment="CENTER_RIGHT" prefHeight="54.0" prefWidth="265.0" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #34495e; -fx-alignment: center-right;" text="User Name ">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -77,6 +77,9 @@
             <HBox alignment="TOP_RIGHT" prefHeight="34.0" prefWidth="410.0" />
          </children>
       </HBox>
-      <AnchorPane layoutX="220.0" layoutY="108.0" prefHeight="512.0" prefWidth="700.0" />
+      <AnchorPane layoutX="220.0" layoutY="108.0" prefHeight="512.0" prefWidth="700.0">
+         <children>
+            <AnchorPane fx:id="homeBackground" layoutX="67.0" layoutY="35.0" prefHeight="422.0" prefWidth="585.0" />
+         </children></AnchorPane>
    </children>
 </AnchorPane>
