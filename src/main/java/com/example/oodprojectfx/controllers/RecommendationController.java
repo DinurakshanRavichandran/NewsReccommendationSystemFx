@@ -28,6 +28,7 @@ public class RecommendationController {
 
     private final ObservableList<Article> articleList = FXCollections.observableArrayList();
     private final RecommendationEngine recommendationEngine = new RecommendationEngine();
+    public Label userNameTag;
 
     @FXML
     public void initialize() {

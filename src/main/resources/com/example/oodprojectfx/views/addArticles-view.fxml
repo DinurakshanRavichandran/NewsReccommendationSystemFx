@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1337.0" prefWidth="1200.0" stylesheets="@../css/addArticle.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oodprojectfx.controllers.addArticleController">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1337.0" prefWidth="1043.0" stylesheets="@../css/addArticle.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oodprojectfx.controllers.addArticleController">
   <content>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1327.0" prefWidth="1200.0">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1327.0" prefWidth="1023.0">
          <children>
             <VBox prefHeight="1334.0" prefWidth="172.0">
                <children>
@@ -25,7 +25,7 @@
                <children>
                   <HBox prefHeight="100.0" prefWidth="200.0" />
                </children></HBox>
-            <VBox layoutX="210.0" layoutY="100.0" prefHeight="1230.0" prefWidth="188.0">
+            <VBox layoutX="172.0" layoutY="101.0" prefHeight="1230.0" prefWidth="131.0">
                <children>
                   <HBox alignment="CENTER_RIGHT" prefHeight="66.0" prefWidth="188.0">
                      <children>
@@ -48,39 +48,39 @@
                      </children>
                   </HBox>
                   <HBox prefHeight="478.0" prefWidth="188.0" />
-                  <HBox alignment="CENTER_RIGHT" prefHeight="175.0" prefWidth="188.0">
+                  <HBox alignment="CENTER_RIGHT" prefHeight="155.0" prefWidth="131.0">
                      <children>
                         <Label text="Date Published :" />
                      </children>
                   </HBox>
                </children>
             </VBox>
-            <VBox layoutX="398.0" layoutY="99.0" prefHeight="1235.0" prefWidth="791.0">
+            <VBox layoutX="308.0" layoutY="98.0" prefHeight="1235.0" prefWidth="682.0">
                <children>
-                  <HBox alignment="CENTER" prefHeight="68.0" prefWidth="791.0">
+                  <HBox alignment="CENTER" prefHeight="68.0" prefWidth="738.0">
                      <children>
-                        <TextField fx:id="titleField" prefHeight="40.0" prefWidth="701.0" />
+                        <TextField fx:id="titleField" prefHeight="40.0" prefWidth="616.0" />
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="63.0" prefWidth="791.0">
+                  <HBox alignment="CENTER" prefHeight="63.0" prefWidth="717.0">
                      <children>
-                        <TextField fx:id="contentField" prefHeight="40.0" prefWidth="701.0" />
+                        <TextField fx:id="contentField" prefHeight="40.0" prefWidth="616.0" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="74.0" prefWidth="791.0">
                      <children>
-                        <TextField fx:id="authorField" prefHeight="40.0" prefWidth="701.0" />
+                        <TextField fx:id="authorField" prefHeight="40.0" prefWidth="616.0" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="538.0" prefWidth="791.0">
                      <children>
-                        <TextArea fx:id="articleTextField" prefHeight="714.0" prefWidth="702.0" wrapText="true" />
+                        <TextArea fx:id="articleTextField" prefHeight="714.0" prefWidth="616.0" wrapText="true" />
                      </children>
                   </HBox>
                   <HBox prefHeight="38.0" prefWidth="791.0" />
                   <HBox alignment="CENTER" prefHeight="40.0" prefWidth="791.0">
                      <children>
-                        <TextField fx:id="datePublishedField" prefHeight="40.0" prefWidth="702.0" />
+                        <TextField fx:id="datePublishedField" prefHeight="40.0" prefWidth="616.0" />
                      </children>
                   </HBox>
                   <HBox prefHeight="27.0" prefWidth="791.0">
@@ -89,7 +89,7 @@
                      </children></HBox>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <Button fx:id="saveButton" layoutX="566.0" layoutY="44.0" mnemonicParsing="false" onAction="#onSaveButtonClick" prefHeight="39.0" prefWidth="178.0" text="Save" />
+                        <Button fx:id="saveButton" layoutX="471.0" layoutY="50.0" mnemonicParsing="false" onAction="#onSaveButtonClick" prefHeight="39.0" prefWidth="178.0" text="Save" />
                      </children>
                   </AnchorPane>
                </children>

@@ -44,12 +44,16 @@ public class ArticleAdminViewController {
 
     }
 
+    private String escapeSingleQuotes(String input) {
+        return input.replace("'", "''");
+    }
+
     public void onSaveButtonClick(ActionEvent event) {
-        String title = titleField.getText().trim();
-        String content = contentField.getText().trim();
-        String author = authorField.getText().trim();
-        String datePublished = datePublishedField.getText().trim();
-        String articleText = articleTextField.getText().trim();
+        String title = escapeSingleQuotes(titleField.getText().trim());
+        String content = escapeSingleQuotes(contentField.getText().trim());
+        String author = escapeSingleQuotes(authorField.getText().trim());
+        String articleText = escapeSingleQuotes(articleTextField.getText().trim());
+        String datePublished = escapeSingleQuotes(datePublishedField.getText().trim());
 
         if(title.isEmpty() || content.isEmpty() || author.isEmpty() || datePublished.isEmpty() || articleText.isEmpty())
         {
@@ -76,7 +80,7 @@ public class ArticleAdminViewController {
         try{
             //call database handler to add
             DatabaseHandler.iud(query);
-            showAlert("Registration Successful", " The article has been successfully added");
+            showAlert("Registration Successful", " The article has been successfully saved");
 
             try{
                 //changeScene
@@ -92,7 +96,7 @@ public class ArticleAdminViewController {
         }catch(Exception e)
         {
             e.printStackTrace();
-            showAlert("Adding article failed", "The article wasn't added please try again");
+            showAlert("Adding article failed", "The article wasn't saved please try again");
         }
 
 

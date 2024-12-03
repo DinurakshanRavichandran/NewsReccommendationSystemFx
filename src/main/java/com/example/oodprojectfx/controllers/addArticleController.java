@@ -33,12 +33,16 @@ public class addArticleController  {
     @FXML
     public Button saveButton;
 
+    private String escapeSingleQuotes(String input) {
+        return input.replace("'", "''");
+    }
+
     public void onSaveButtonClick(ActionEvent event) {
-        String title = titleField.getText().trim();
-        String content = contentField.getText().trim();
-        String author = authorField.getText().trim();
-        String articleText = articleTextField.getText().trim();
-        String datePublished = datePublishedField.getText().trim();
+        String title = escapeSingleQuotes(titleField.getText().trim());
+        String content = escapeSingleQuotes(contentField.getText().trim());
+        String author = escapeSingleQuotes(authorField.getText().trim());
+        String articleText = escapeSingleQuotes(articleTextField.getText().trim());
+        String datePublished = escapeSingleQuotes(datePublishedField.getText().trim());
 
         //check for empty fields
         if(title.isEmpty() || content.isEmpty() || articleText.isEmpty() || author.isEmpty() || datePublished.isEmpty())

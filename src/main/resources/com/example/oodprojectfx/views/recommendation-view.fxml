@@ -23,9 +23,9 @@
                </children>
             </HBox>
             <HBox prefHeight="54.0" prefWidth="325.0" />
-            <HBox prefHeight="54.0" prefWidth="200.0">
+            <HBox prefHeight="66.0" prefWidth="262.0">
                <children>
-                  <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="54.0" prefWidth="200.0" text="User Name ">
+                  <Label fx:id="userNameTag" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="54.0" prefWidth="261.0" text="User Name ">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
