@@ -9,10 +9,16 @@ import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 
+import java.io.IOException;
 import java.util.List;
 
 public class RecommendationController {
@@ -32,6 +38,11 @@ public class RecommendationController {
 
     @FXML
     public void initialize() {
+
+        // Set the user's name tag
+        String userName = UserSession.getInstance().getCurrentUser().getUsername();
+        userNameTag.setText("Welcome, " + userName + "!");
+
         // Bind table columns
         titleField.setCellValueFactory(new PropertyValueFactory<>("title"));
         authorField.setCellValueFactory(new PropertyValueFactory<>("author"));
@@ -102,22 +113,53 @@ public class RecommendationController {
 
     private void showArticleDetails(ActionEvent event, Article article) {
         // Implementation for showing article details
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/oodprojectfx/views/userArticleView-view.fxml"));
+            Parent root = loader.load();
+
+            // Pass article data to details controller
+            UserArticleViewViewController controller = loader.getController();
+            controller.setArticle(article);
+            controller.setArticleList(articleList);
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
+
+    private void changeToNextScene(ActionEvent event, String fxmlFile) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     @FXML
     public void onHomeButtonClick(ActionEvent event) {
-        // Navigate to home
+        changeToNextScene(event, "/com/example/oodprojectfx/views/homeUser-view.fxml");
+
     }
 
     @FXML
     public void onArticleButtonClick(ActionEvent event) {
         // Navigate to articles
+        changeToNextScene(event, "/com/example/oodprojectfx/views/articlePageUserView-view.fxml");
+
     }
 
     @FXML
     public void onRecommendationButtonClick(ActionEvent event) {
         // Refresh recommendations
-        loadRecommendedArticlesAsync();
     }
 
     public void onLogoutButtonClick(ActionEvent event) {

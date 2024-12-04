@@ -30,7 +30,7 @@ public class HomeUserController implements Initializable {
         // Fetch the username from the UserSession and set it to the userNameTag
         String username = UserSession.getInstance().getCurrentUser().getUsername(); // Adjust method name if different
         if (username != null) {
-            userNameTag.setText(username);
+            userNameTag.setText("Welcome, " + username + "!");
         } else {
             userNameTag.setText("Guest"); // Default fallback
         }

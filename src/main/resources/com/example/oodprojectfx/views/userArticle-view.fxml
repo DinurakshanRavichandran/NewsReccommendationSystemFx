@@ -18,7 +18,7 @@
             </HBox>
          </children>
       </HBox>
-      <TextArea fx:id="articleTextField" layoutX="43.0" layoutY="138.0" prefHeight="473.0" prefWidth="486.0" />
+      <TextArea fx:id="articleTextField" layoutX="43.0" layoutY="138.0" prefHeight="473.0" prefWidth="486.0" wrapText="true" />
       <Button fx:id="likeButton" layoutX="492.0" layoutY="634.0" mnemonicParsing="false" onAction="#onLikeButtonClick" text="Like" />
    </children>
 </AnchorPane>

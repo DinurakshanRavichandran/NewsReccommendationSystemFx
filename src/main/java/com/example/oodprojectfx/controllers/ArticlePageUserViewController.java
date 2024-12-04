@@ -11,10 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableCell;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.util.Callback;
@@ -33,11 +30,19 @@ public class ArticlePageUserViewController {
     public TableColumn<Article, String> authorColumn;
     @FXML
     public TableColumn<Article, Void> viewButtonColumn;
+    @FXML
+    public Label userNameTag;
 
     private ObservableList<Article> articleList = FXCollections.observableArrayList();
 
     @FXML
     public void initialize() {
+
+        // Set the user's name tag
+        String userName = UserSession.getInstance().getCurrentUser().getUsername();
+        userNameTag.setText("Welcome, " + userName + "!");
+
+
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
         authorColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
 
