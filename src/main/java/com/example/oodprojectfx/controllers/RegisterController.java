@@ -11,6 +11,8 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.util.regex.Pattern;
 
 public class RegisterController {
 
@@ -43,6 +45,13 @@ public class RegisterController {
             showAlert("Empty fields", "Some of the fields are empty. Kindly fill in all the fields");
             return;
         }
+
+        if(!isValidEmail(email))
+        {
+            showAlert("Invalid email", "Please enter a valid email");
+            return;
+        }
+
         // check if the passwords match
         if (!password.equals(reEnterPassword)) {
             showAlert("Password mismatch", "The passwords you entered do not match.");
@@ -52,6 +61,8 @@ public class RegisterController {
         // determine type based on checkbox
         String accountType = adminOptionCheckbox.isSelected() ? "Admin" : "User";
 
+
+
         // Create query to add all the features to the database
         // Corrected query
         String query = "INSERT INTO user (username, email, password, accountType) VALUES ('" + username + "', '" + email + "', '" + password + "', '" + accountType + "');";
@@ -59,6 +70,14 @@ public class RegisterController {
 
         //Put the query into the iud function
         try{
+            // add a query to see if it already exists in the database the email
+            String checkQuery = "SELECT COUNT(*) AS count FROM user WHERE email = '" + email + "';";
+            ResultSet rs = DatabaseHandler.search(checkQuery);
+            if (rs.next() && rs.getInt("count") > 0) {
+                showAlert("Email Already Exists", "An account with this email already exists. Please use a different email.");
+                return;
+            }
+
             DatabaseHandler.iud(query);
             showAlert("Registration Successful", "You have successfully registered");
             //Should go to the login page from here
@@ -78,8 +97,12 @@ public class RegisterController {
             showAlert("Registration Failed", "An error occurred while registering. Please try again.");
         }
     }
-    @FXML
-    public void onLoginButtonClick(ActionEvent event) {
+
+    public static boolean isValidEmail(String email) {
+        // Regex pattern for a valid email
+        String emailRegex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$";
+        Pattern pattern = Pattern.compile(emailRegex);
+        return pattern.matcher(email).matches();
     }
 
     @FXML

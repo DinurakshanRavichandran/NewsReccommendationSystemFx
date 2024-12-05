@@ -83,7 +83,7 @@ public class ArticlePageUserViewController {
             Parent root = loader.load();
 
             // Pass the article details to the ArticleDetailsController
-            UserArticleViewViewController controller = loader.getController();
+            UserArticleViewController controller = loader.getController();
             controller.setArticle(article);// sending the article from this class to the next
             controller.setArticleList(articleList); // sending the article list from this class to the next
 

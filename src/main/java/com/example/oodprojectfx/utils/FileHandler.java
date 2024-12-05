@@ -76,6 +76,6 @@ public class FileHandler {
     }
 
     public static void main(String[] args) {
-        addArticlesFromFile("C:\\Users\\Dinurakshan\\OneDrive\\Desktop\\Second Year Sem 1\\Courseworks\\Object oriented programming\\OODCW\\OOD-ProjectFx\\src\\main\\resources\\com\\example\\oodprojectfx\\views\\ArticleDataSet.csv"); // Replace with your actual file path
+        addArticlesFromFile("src/main/resources/com/example/oodprojectfx/dataset/ArticleDataSet.csv"); // Replace with your actual file path
     }
 }

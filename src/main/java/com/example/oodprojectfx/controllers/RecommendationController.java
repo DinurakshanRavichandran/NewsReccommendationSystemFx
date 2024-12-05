@@ -3,7 +3,6 @@ package com.example.oodprojectfx.controllers;
 import com.example.oodprojectfx.models.Article;
 import com.example.oodprojectfx.models.UserSession;
 import com.example.oodprojectfx.services.RecommendationEngine;
-import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
@@ -118,7 +117,7 @@ public class RecommendationController {
             Parent root = loader.load();
 
             // Pass article data to details controller
-            UserArticleViewViewController controller = loader.getController();
+            UserArticleViewController controller = loader.getController();
             controller.setArticle(article);
             controller.setArticleList(articleList);
 

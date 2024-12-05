@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@../css/articlePageView.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oodprojectfx.controllers.articlePageController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" stylesheets="@../css/articlePageView.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oodprojectfx.controllers.ArticlePageController">
    <children>
       <HBox layoutX="210.0" prefHeight="62.0" prefWidth="701.0" />
       <VBox prefHeight="590.0" prefWidth="209.0">

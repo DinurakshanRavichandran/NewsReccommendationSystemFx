@@ -18,6 +18,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.regex.Pattern;
 
 public class LoginController {
 
@@ -44,6 +45,12 @@ public class LoginController {
         // check if the email and password are empty
         if(email.isEmpty() || password.isEmpty()) {
             showAlert("Empty fields", "Please fill in the required fields");
+            return;
+        }
+
+        if(!isValidEmail(email))
+        {
+            showAlert("Invalid email", "Please enter a valid email");
             return;
         }
 
@@ -103,6 +110,14 @@ public class LoginController {
 
 
     }
+
+    public static boolean isValidEmail(String email) {
+        // Regex pattern for a valid email
+        String emailRegex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$";
+        Pattern pattern = Pattern.compile(emailRegex);
+        return pattern.matcher(email).matches();
+    }
+
 
     @FXML
     void onSignUpButtonClick(ActionEvent event) {

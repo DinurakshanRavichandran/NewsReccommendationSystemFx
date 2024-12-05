@@ -39,7 +39,7 @@
 
 .button:pressed {
     -fx-background-color: #004d80; /* Darker blue for pressed state */
-    -fx-effect: inset 0 2px 4px rgba(0, 0, 0, 0.5); /* Pressed inset shadow effect */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 4, 0, 0, 0); /* Adjust for subtle effect */
 }
 
 /* TextFields and PasswordFields */

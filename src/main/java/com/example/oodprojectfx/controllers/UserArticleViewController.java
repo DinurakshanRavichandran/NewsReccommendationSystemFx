@@ -2,7 +2,6 @@ package com.example.oodprojectfx.controllers;
 
 import com.example.oodprojectfx.database.DatabaseHandler;
 import com.example.oodprojectfx.models.Article;
-import com.example.oodprojectfx.models.User;
 import com.example.oodprojectfx.models.UserSession;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,7 +19,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-public class UserArticleViewViewController {
+public class UserArticleViewController {
 
     @FXML
     public Button backButton;
